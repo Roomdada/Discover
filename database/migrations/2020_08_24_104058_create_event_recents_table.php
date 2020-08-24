@@ -15,6 +15,19 @@ class CreateEventRecentsTable extends Migration
     {
         Schema::create('event_recents', function (Blueprint $table) {
             $table->id();
+            $table->string('title');
+            $table->string('slug')->unique();
+            $table->longtext('description');
+            $table->integer('price');
+            $table->integer('price_vip');
+            $table->string('place');
+            $table->integer('ticket');
+            $table->integer('ticket_vip');
+            $table->date('event_date');
+            $table->string('event_hourb');
+            $table->date('event_hourf');
+            $table->string('image');
+            $table->integer('artiste_id');
             $table->timestamps();
         });
     }
