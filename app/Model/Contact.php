@@ -10,12 +10,12 @@ class Contact extends Model
 
 
 
-    public static function($fullname,$email,$subject,$content)
+    public static function createContact($fullname,$email,$subject,$content)
     {
     	return Contact::create(['fullname'=>$fullname,'email'=>$email,'subject'=>$subject,'content'=>$content,'unique_id'=>uniqid()]);
     }
 
-    public static function($unique_id)
+    public static function getMessage($unique_id)
     {
     	return Contact::where('unique_id',$unique_id)->delete();
     }
